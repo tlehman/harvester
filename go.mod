@@ -62,7 +62,8 @@ require (
 	github.com/harvester/harvester-network-controller v0.1.7
 	github.com/iancoleman/strcase v0.1.2
 	github.com/k3s-io/helm-controller v0.11.7
-	github.com/k8snetworkplumbingwg/network-attachment-definition-client v0.0.0-20200331171230-d50e42f2b669
+	github.com/k8snetworkplumbingwg/network-attachment-definition-client v0.0.0-20200626054723-37f83d1996bc
+	github.com/k8snetworkplumbingwg/sriov-network-operator v1.1.0 // indirect
 	github.com/kubernetes-csi/external-snapshotter/v2 v2.1.1
 	github.com/kubernetes/dashboard v1.10.1
 	github.com/longhorn/backupstore v0.0.0-20210908163358-43c9d3298665
