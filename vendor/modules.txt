@@ -82,7 +82,7 @@ github.com/beorn7/perks/quantile
 github.com/blang/semver
 # github.com/c9s/goprocinfo v0.0.0-20210130143923-c95fcf8c64a8
 github.com/c9s/goprocinfo/linux
-# github.com/cespare/xxhash/v2 v2.1.1
+# github.com/cespare/xxhash/v2 v2.1.2
 github.com/cespare/xxhash/v2
 # github.com/containerd/containerd v1.5.10
 ## explicit
@@ -304,10 +304,12 @@ github.com/k3s-io/helm-controller/pkg/apis/helm.cattle.io
 github.com/k3s-io/helm-controller/pkg/apis/helm.cattle.io/v1
 github.com/k3s-io/helm-controller/pkg/generated/controllers/helm.cattle.io
 github.com/k3s-io/helm-controller/pkg/generated/controllers/helm.cattle.io/v1
-# github.com/k8snetworkplumbingwg/network-attachment-definition-client v0.0.0-20200331171230-d50e42f2b669
+# github.com/k8snetworkplumbingwg/network-attachment-definition-client v0.0.0-20200626054723-37f83d1996bc
 ## explicit
 github.com/k8snetworkplumbingwg/network-attachment-definition-client/pkg/apis/k8s.cni.cncf.io
 github.com/k8snetworkplumbingwg/network-attachment-definition-client/pkg/apis/k8s.cni.cncf.io/v1
+# github.com/k8snetworkplumbingwg/sriov-network-operator v1.1.0
+## explicit
 # github.com/klauspost/compress v1.13.1
 github.com/klauspost/compress/fse
 github.com/klauspost/compress/huff0
@@ -739,7 +741,7 @@ github.com/tinylib/msgp/msgp
 github.com/urfave/cli
 # github.com/willf/bitset v1.1.11
 github.com/willf/bitset
-# github.com/xeipuuv/gojsonpointer v0.0.0-20190809123943-df4f5c81cb3b
+# github.com/xeipuuv/gojsonpointer v0.0.0-20190905194746-02993c407bfb
 github.com/xeipuuv/gojsonpointer
 # github.com/xeipuuv/gojsonreference v0.0.0-20180127040603-bd5ef7bd5415
 github.com/xeipuuv/gojsonreference

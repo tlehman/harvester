@@ -36,7 +36,7 @@ var (
 	SSLCertificates         = NewSetting(SSLCertificatesSettingName, "{}")
 	SSLParameters           = NewSetting(SSLParametersName, "{}")
 	SupportBundleImage      = NewSetting(SupportBundleImageName, "{}")
-	SupportBundleNamespaces = NewSetting("support-bundle-namespaces", "")
+	SupportBundleNamespaces = NewSetting("support-b-namespaces", "")
 	SupportBundleTimeout    = NewSetting(SupportBundleTimeoutSettingName, "10") // Unit is minute. 0 means disable timeout.
 	DefaultStorageClass     = NewSetting("default-storage-class", "longhorn")
 	HTTPProxy               = NewSetting(HttpProxySettingName, "{}")
