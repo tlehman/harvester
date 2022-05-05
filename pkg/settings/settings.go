@@ -59,6 +59,7 @@ const (
 	VolumeSnapshotClassSettingName  = "volume-snapshot-class"
 	DefaultDashboardUIURL           = "https://releases.rancher.com/harvester-ui/dashboard/latest/index.html"
 	SupportBundleImageName          = "support-bundle-image"
+	SRIOVVirtualFunctionsCountName  = "sriov-vfs-count"
 )
 
 func init() {
