@@ -52,6 +52,7 @@ var validateSettingFuncs = map[string]validateSettingFunc{
 	settings.VipPoolsConfigSettingName:       validateVipPoolsConfig,
 	settings.SSLCertificatesSettingName:      validateSSLCertificates,
 	settings.SSLParametersName:               validateSSLParameters,
+	settings.SRIOVVirtualFunctionsCountName:  validateSRIOVVirtualFunctionsCount,
 }
 
 func NewValidator(
@@ -408,6 +409,24 @@ func validateSSLProtocols(param *settings.SSLParameter) error {
 	}
 
 	return nil
+}
+
+// SR-IOV allows between 0 and sriov_totalvfs virtual functions (VFs)
+// to be created. For example: /sys/bus/pci/devices/0000:02:00.0/sriov_totalvfs (7)
+func validateSRIOVVirtualFunctionsCount(setting *v1beta1.Setting) error {
+	if setting.Value == "" || setting.Value == "0" {
+		return nil
+	}
+	// TODO: Get totalvfs
+	totalvfs := 7
+	numvfs, err := strconv.Atoi(setting.Value)
+	if err != nil {
+		return err
+	}
+	if numvfs <= totalvfs {
+		return nil
+	}
+	return fmt.Errorf("not a valid vfs count: %v", setting.Value)
 }
 
 func getSystemCerts() *x509.CertPool {

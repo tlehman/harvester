@@ -19,31 +19,32 @@ var (
 	provider       Provider
 	InjectDefaults string
 
-	AdditionalCA            = NewSetting(AdditionalCASettingName, "")
-	APIUIVersion            = NewSetting("api-ui-version", "1.1.9") // Please update the HARVESTER_API_UI_VERSION in package/Dockerfile when updating the version here.
-	ClusterRegistrationURL  = NewSetting("cluster-registration-url", "")
-	ServerVersion           = NewSetting("server-version", "dev")
-	UIIndex                 = NewSetting("ui-index", DefaultDashboardUIURL)
-	UIPath                  = NewSetting("ui-path", "/usr/share/harvester/harvester")
-	UISource                = NewSetting("ui-source", "auto") // Options are 'auto', 'external' or 'bundled'
-	VolumeSnapshotClass     = NewSetting(VolumeSnapshotClassSettingName, "longhorn")
-	BackupTargetSet         = NewSetting(BackupTargetSettingName, InitBackupTargetToString())
-	UpgradableVersions      = NewSetting("upgradable-versions", "")
-	UpgradeCheckerEnabled   = NewSetting("upgrade-checker-enabled", "true")
-	UpgradeCheckerURL       = NewSetting("upgrade-checker-url", "https://harvester-upgrade-responder.rancher.io/v1/checkupgrade")
-	ReleaseDownloadURL      = NewSetting("release-download-url", "https://releases.rancher.com/harvester")
-	LogLevel                = NewSetting("log-level", "info") // options are info, debug and trace
-	SSLCertificates         = NewSetting(SSLCertificatesSettingName, "{}")
-	SSLParameters           = NewSetting(SSLParametersName, "{}")
-	SupportBundleImage      = NewSetting(SupportBundleImageName, "{}")
-	SupportBundleNamespaces = NewSetting("support-b-namespaces", "")
-	SupportBundleTimeout    = NewSetting(SupportBundleTimeoutSettingName, "10") // Unit is minute. 0 means disable timeout.
-	DefaultStorageClass     = NewSetting("default-storage-class", "longhorn")
-	HTTPProxy               = NewSetting(HttpProxySettingName, "{}")
-	VMForceResetPolicySet   = NewSetting(VMForceResetPolicySettingName, InitVMForceResetPolicy())
-	OvercommitConfig        = NewSetting(OvercommitConfigSettingName, `{"cpu":1600,"memory":150,"storage":200}`)
-	VipPools                = NewSetting(VipPoolsConfigSettingName, "")
-	AutoDiskProvisionPaths  = NewSetting("auto-disk-provision-paths", "")
+	AdditionalCA               = NewSetting(AdditionalCASettingName, "")
+	APIUIVersion               = NewSetting("api-ui-version", "1.1.9") // Please update the HARVESTER_API_UI_VERSION in package/Dockerfile when updating the version here.
+	ClusterRegistrationURL     = NewSetting("cluster-registration-url", "")
+	ServerVersion              = NewSetting("server-version", "dev")
+	UIIndex                    = NewSetting("ui-index", DefaultDashboardUIURL)
+	UIPath                     = NewSetting("ui-path", "/usr/share/harvester/harvester")
+	UISource                   = NewSetting("ui-source", "auto") // Options are 'auto', 'external' or 'bundled'
+	VolumeSnapshotClass        = NewSetting(VolumeSnapshotClassSettingName, "longhorn")
+	BackupTargetSet            = NewSetting(BackupTargetSettingName, InitBackupTargetToString())
+	UpgradableVersions         = NewSetting("upgradable-versions", "")
+	UpgradeCheckerEnabled      = NewSetting("upgrade-checker-enabled", "true")
+	UpgradeCheckerURL          = NewSetting("upgrade-checker-url", "https://harvester-upgrade-responder.rancher.io/v1/checkupgrade")
+	ReleaseDownloadURL         = NewSetting("release-download-url", "https://releases.rancher.com/harvester")
+	LogLevel                   = NewSetting("log-level", "info") // options are info, debug and trace
+	SSLCertificates            = NewSetting(SSLCertificatesSettingName, "{}")
+	SSLParameters              = NewSetting(SSLParametersName, "{}")
+	SupportBundleImage         = NewSetting(SupportBundleImageName, "{}")
+	SupportBundleNamespaces    = NewSetting("support-b-namespaces", "")
+	SupportBundleTimeout       = NewSetting(SupportBundleTimeoutSettingName, "10") // Unit is minute. 0 means disable timeout.
+	DefaultStorageClass        = NewSetting("default-storage-class", "longhorn")
+	HTTPProxy                  = NewSetting(HttpProxySettingName, "{}")
+	VMForceResetPolicySet      = NewSetting(VMForceResetPolicySettingName, InitVMForceResetPolicy())
+	OvercommitConfig           = NewSetting(OvercommitConfigSettingName, `{"cpu":1600,"memory":150,"storage":200}`)
+	VipPools                   = NewSetting(VipPoolsConfigSettingName, "")
+	AutoDiskProvisionPaths     = NewSetting("auto-disk-provision-paths", "")
+	SRIOVVirtualFunctionsCount = NewSetting(SRIOVVirtualFunctionsCountName, "0")
 )
 
 const (
