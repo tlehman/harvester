@@ -67,6 +67,7 @@ func Register(ctx context.Context, management *config.Management, options config
 		"auto-disk-provision-paths": controller.syncNDMAutoProvisionPaths,
 		"ssl-certificates":          controller.syncSSLCertificate,
 		"ssl-parameters":            controller.syncSSLParameters,
+		"sriov-vfs-count":           controller.setSRIOVVirtualFunctionCount,
 	}
 
 	settings.OnChange(ctx, controllerName, controller.settingOnChanged)
