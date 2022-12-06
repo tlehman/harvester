@@ -1,9 +1,12 @@
 package node
 
 import (
+	"strconv"
+
 	v1 "github.com/rancher/wrangler/pkg/generated/controllers/core/v1"
 	admissionregv1 "k8s.io/api/admissionregistration/v1"
 	corev1 "k8s.io/api/core/v1"
+	"k8s.io/apimachinery/pkg/api/resource"
 	"k8s.io/apimachinery/pkg/labels"
 	"k8s.io/apimachinery/pkg/runtime"
 
@@ -45,7 +48,27 @@ func (v *nodeValidator) Update(request *types.Request, oldObj runtime.Object, ne
 		return err
 	}
 
+	// check node labels for maxPods param overide
+	maxPods, err := validateMaxPods(newNode)
+	if err != nil {
+		return err
+	}
+	// set the max pods for the node
+	newNode.Status.Capacity[corev1.ResourcePods] = *resource.NewQuantity(int64(maxPods), resource.DecimalSI)
+
 	return validateCordonAndMaintenanceMode(oldNode, newNode, nodeList)
+}
+
+const defaultMaxPods = 110
+
+func validateMaxPods(newNode *corev1.Node) (int, error) {
+	maxPodsStr := newNode.Labels["harvesterhci.io/maxPods"]
+	maxPods, err := strconv.Atoi(maxPodsStr)
+	if err != nil {
+		return defaultMaxPods, err
+	}
+
+	return maxPods, nil
 }
 
 func validateCordonAndMaintenanceMode(oldNode, newNode *corev1.Node, nodeList []*corev1.Node) error {
